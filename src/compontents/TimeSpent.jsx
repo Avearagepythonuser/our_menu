@@ -16,4 +16,4 @@ export function TimeSpent() {
             {timeSpent}s
         </div>
     )
-}
+}   
