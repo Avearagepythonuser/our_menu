@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { foods } from "../data";
+import { useEffect } from "react";
 
-export function MenuList() {
+export function MenuList({selectedCateg}) {
     const [menu, setMenu] = useState(foods)
+
+    useEffect(() => {
+        setMenu(()=> selectedCateg  == "all" ? foods: foods.filter(obj=>obj.category==selectedCateg))
+    }, [selectedCateg])
 
     return (
         <div className="flex flex-wrap gap-4">
